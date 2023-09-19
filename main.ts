@@ -2,11 +2,13 @@ class Pokemon{
     private nom:string;
     private pointsDeVie:number;
     private pointsAttaque:number;
+    private type:string;
 
-    constructor(nom:string, pointsDeVie:number, pointsAttaque:number){
+    constructor(nom:string, pointsDeVie:number, pointsAttaque:number, type:string){
         this.nom = nom;
         this.pointsDeVie = pointsDeVie;
         this.pointsAttaque = pointsAttaque;
+        this.type = type;
     }
 
     estMort():boolean{
@@ -17,7 +19,61 @@ class Pokemon{
     }
 
     attaquer(p:Pokemon):void{
-        p.pointsDeVie - this.pointsAttaque;
+        if(this.type == "Feu"){
+            if(p.type == "Plante")
+            {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !")
+            }
+            else if(p.type == "Eau" || p.type == "Feu")
+            {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...")
+            }
+            else
+            {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else if(this.type == "Feu"){
+            if(p.type == "Plante")
+            {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !")
+            }
+            else if(p.type == "Eau" || p.type == "Plante")
+            {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...")
+            }
+            else
+            {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else if(this.type == "Plante"){
+            if(p.type == "Eau")
+            {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !")
+            }
+            else if(p.type == "Feu" || p.type == "Plante")
+            {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...")
+            }
+            else
+            {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else{
+            p.pointsDeVie - this.pointsAttaque;
+            console.log("L'attaque est normale");
+        }
     }
 
     afficherInformations():void{
