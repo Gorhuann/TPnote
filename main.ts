@@ -19,6 +19,7 @@ class Pokemon{
     }
 
     attaquer(p:Pokemon):void{
+        console.log(`${this.nom} attaque ${p.nom} !`)
         if(this.type == "Feu"){
             if(p.type == "Plante")
             {
