@@ -81,7 +81,19 @@ class Pokemon{
     }
 }
 
-let dracofeu = new Pokemon("Dracofeu", 30, 10, "Feu");
+let dracofeu = new Pokemon("Dracofeu", 32, 10, "Feu");
 let carapuce = new Pokemon("Carapuce", 30, 16, "Eau");
 let bulbizarre = new Pokemon("Bulbizarre", 30, 12, "Plante");
+
+dracofeu.afficherInformations();
+carapuce.afficherInformations();
+
+if(dracofeu.estMort())
+    console.log("Dracofeu est mort !")
+else
+    console.log("Dracofeu est vivant !")
+
+dracofeu.attaquer(carapuce);
+
+carapuce.afficherInformations();
 
