@@ -79,3 +79,4 @@ dracofeu.attaquer(carapuce);
 carapuce.afficherInformations();
 carapuce.attaquer(dracofeu);
 dracofeu.afficherInformations();
+carapuce.attaquer(dracofeu);

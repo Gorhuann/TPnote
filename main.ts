@@ -21,9 +21,9 @@ class Pokemon{
     attaquer(p:Pokemon):void{
         console.log(`${this.nom} attaque ${p.nom} !`)
         if(this.estMort())
-            console.log(`${this.nom} est mort il ne peut plus attaquer !`)
+            console.log(`${this.nom} est mort il ne peut plus combattre !`)
         else if(p.estMort())
-            console.log(`${p.nom} est mort il ne peut plus attaquer !`)
+            console.log(`${p.nom} est mort il ne peut plus combattre !`)
         else{
             if(this.type == "Feu"){
                 if(p.type == "Plante")
@@ -103,3 +103,4 @@ carapuce.attaquer(dracofeu);
 
 dracofeu.afficherInformations();
 
+carapuce.attaquer(dracofeu);
