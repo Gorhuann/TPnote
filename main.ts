@@ -43,7 +43,7 @@ class Pokemon{
                 }
             }
             else if(this.type == "Eau"){
-                if(p.type == "Plante")
+                if(p.type == "Feu")
                 {
                     p.pointsDeVie -= (this.pointsAttaque * 2);
                     console.log("C'est super efficace !")

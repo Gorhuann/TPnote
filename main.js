@@ -32,8 +32,8 @@ class Pokemon {
                     console.log("L'attaque est normale");
                 }
             }
-            else if (this.type == "Feu") {
-                if (p.type == "Plante") {
+            else if (this.type == "Eau") {
+                if (p.type == "Feu") {
                     p.pointsDeVie -= (this.pointsAttaque * 2);
                     console.log("C'est super efficace !");
                 }
