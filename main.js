@@ -1,8 +1,9 @@
 class Pokemon {
-    constructor(nom, pointsDeVie, pointsAttaque) {
+    constructor(nom, pointsDeVie, pointsAttaque, type) {
         this.nom = nom;
         this.pointsDeVie = pointsDeVie;
         this.pointsAttaque = pointsAttaque;
+        this.type = type;
     }
     estMort() {
         if (this.pointsDeVie == 0)
@@ -11,7 +12,52 @@ class Pokemon {
             return false;
     }
     attaquer(p) {
-        p.pointsDeVie - this.pointsAttaque;
+        if (this.type == "Feu") {
+            if (p.type == "Plante") {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !");
+            }
+            else if (p.type == "Eau" || p.type == "Feu") {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...");
+            }
+            else {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else if (this.type == "Feu") {
+            if (p.type == "Plante") {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !");
+            }
+            else if (p.type == "Eau" || p.type == "Plante") {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...");
+            }
+            else {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else if (this.type == "Plante") {
+            if (p.type == "Eau") {
+                p.pointsDeVie - (this.pointsAttaque * 2);
+                console.log("C'est super efficace !");
+            }
+            else if (p.type == "Feu" || p.type == "Plante") {
+                p.pointsDeVie - (this.pointsAttaque / 2);
+                console.log("Ce n'est pas très efficace...");
+            }
+            else {
+                p.pointsDeVie - this.pointsAttaque;
+                console.log("L'attaque est normale");
+            }
+        }
+        else {
+            p.pointsDeVie - this.pointsAttaque;
+            console.log("L'attaque est normale");
+        }
     }
     afficherInformations() {
         console.log(`Ce pokemon se nomme ${this.nom}, il possède ${this.pointsDeVie} points de vie et ${this.pointsAttaque} de point d'attaque.`);
