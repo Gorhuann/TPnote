@@ -42,7 +42,7 @@ class Pokemon{
                     console.log("L'attaque est normale");
                 }
             }
-            else if(this.type == "Feu"){
+            else if(this.type == "Eau"){
                 if(p.type == "Plante")
                 {
                     p.pointsDeVie -= (this.pointsAttaque * 2);
@@ -84,7 +84,7 @@ class Pokemon{
     }
 
     afficherInformations():void{
-        console.log(`Ce pokemon se nomme ${this.nom}, il possède ${this.pointsDeVie} points de vie et ${this.pointsAttaque} de point d'attaque.`);
+        console.log(`Ce pokemon se nomme ${this.nom}, il possède ${this.pointsDeVie} points de vie et ${this.pointsAttaque} de point d'attaque, il est de type ${this.type}.`);
     }
 }
 
@@ -95,12 +95,11 @@ let bulbizarre = new Pokemon("Bulbizarre", 30, 12, "Plante");
 dracofeu.afficherInformations();
 carapuce.afficherInformations();
 
-if(dracofeu.estMort())
-    console.log("Dracofeu est mort !")
-else
-    console.log("Dracofeu est vivant !")
-
 dracofeu.attaquer(carapuce);
 
 carapuce.afficherInformations();
+
+carapuce.attaquer(dracofeu);
+
+dracofeu.afficherInformations();
 
